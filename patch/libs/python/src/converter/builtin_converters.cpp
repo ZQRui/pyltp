@@ -48,7 +48,7 @@ namespace
 #else
   void* convert_to_cstring(PyObject* obj)
   {
-      return PyUnicode_Check(obj) ? _PyUnicode_AsString(obj) : 0;
+      return (void *)(PyUnicode_Check(obj) ? _PyUnicode_AsString(obj) : 0);
   }
 #endif
 
