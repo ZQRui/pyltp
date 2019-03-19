@@ -10,11 +10,13 @@ if [[ $TRAVIS_OS_NAME == 'osx' ]]; then
     echo TOXENV:${TOXENV}
     case "${TOXENV}" in
         py2)
+            brew uninstall python || echo "not exist python"
             brew install python
             echo "Success install python3"
             PY=python2
             ;;
         py3)
+            brew uninstall python || echo "not exist python"
             brew install python3
             PY=python3
             echo "Success install python3"
